@@ -4,7 +4,7 @@
 
 ### Project Goals
 - Allow users to upload csv files of upto 100 mb in size.
-  - In case csv files do not have explicit headers the tool infers the header names. More details can be read here.
+  - In case csv files do not have explicit headers the tool infers the header names. More details can be read [here](https://github.com/mtkumar123/SchemaIdentifierValidator?tab=readme-ov-file#additional-details).
 - Allow users to define schemas (mapping of column names to data types) and store them in the tool to be reused.
 - Allow users to associate a schema with an uploaded file.
 - Allow users to view a schema associated with a file.
