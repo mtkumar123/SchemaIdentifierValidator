@@ -110,7 +110,14 @@ def _build_dynamic_pydantic_model(schema: dict[str, str]) -> BaseModel:
 def _file_validation(
     file_location: str, schema: dict[str, str]
 ) -> tuple[bool, Optional[str]]:
-    df = pd.read_csv(file_location, names=list(schema.keys()))
+    df = pd.read_csv(file_location)
+    has_cols, columns = get_columns(df)
+    if not has_cols:
+        # Add back the first row
+        temp_df = pd.DataFrame([df.columns])
+        temp_df.columns = list(schema.keys())
+        df.columns = list(schema.keys())
+        df = pd.concat([temp_df, df], ignore_index=True)
     validator_model = _build_dynamic_pydantic_model(schema)
     for index, row in df.iterrows():
         try:
