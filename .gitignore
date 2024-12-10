@@ -3,3 +3,4 @@
 .vscode
 design.drawio
 __pycache__
+*.pyc
