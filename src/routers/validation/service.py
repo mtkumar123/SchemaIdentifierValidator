@@ -123,7 +123,10 @@ def _file_validation(
         try:
             validator_model(**row.to_dict())
         except Exception as exc:
-            return False, f"Validation failed for row {index}: {row.to_dict()}"
+            return (
+                False,
+                f"Validation failed for row {index}: {row.to_dict()}. Exception: {exc}",
+            )
     return True, None
 
 

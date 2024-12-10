@@ -44,3 +44,4 @@ Validation of a file is done with the help of Pydantic. If a file has an associa
 - For column inference check uploaded files as well to see if they have the same dtype structure.
 - Adding linting, and mypy to the repo.
 - Separate out the BaseSchemaRequest model a bit more - right now the columns and dtypes are optional and populated through the model validator - but from the openapi spec perspective they seem like mandatory fields. Overall I think the pydantic basemodel hiearchy in the project could be cleaned up a bit more.
+- Use Enum to indicate the supported dtypes.
