@@ -10,6 +10,7 @@
 - Allow users to view a schema associated with a file.
   - In case a file did not have an user defined schema associated with the tool infers the schema to be used.
 - Allow users to perform validation of the file contents against an user provided schema or an inferred schema.
+- Mongodb was choosen as the document database to maintain schemas and file information.
 
 ### Setting Up The Project
 - Make sure you have docker installed and running.
