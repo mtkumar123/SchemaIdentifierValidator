@@ -1,5 +1,7 @@
 ## SchemaIdentifierValidator
 
+<img width="1344" alt="image" src="https://github.com/user-attachments/assets/04a83c99-73f0-45f3-8726-4d90b20f0a5c">
+
 ### Project Goals
 - Allow users to upload csv files of upto 100 mb in size.
   - In case csv files do not have explicit headers the tool infers the header names. More details can be read here.
