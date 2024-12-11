@@ -112,6 +112,11 @@ def _file_validation(
 ) -> tuple[bool, Optional[str]]:
     df = pd.read_csv(file_location)
     has_cols, columns = get_columns(df)
+    if df.shape[1] != len(schema.keys()):
+        return (
+            False,
+            f"Validation failed because number of columns in schema: {list(schema.keys())} are not equal to number of columns in file.",
+        )
     if not has_cols:
         # Add back the first row
         temp_df = pd.DataFrame([df.columns])
