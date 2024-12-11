@@ -63,4 +63,9 @@ def validate_file(
     have an associated schema attached, the inferred schema and columns
     will be used.
     """
-    return service.validate_file(session, file_name)
+    try:
+        return service.validate_file(session, file_name)
+    except FileNotFoundException as exc:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="File not found."
+        )
